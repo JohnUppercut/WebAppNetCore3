@@ -1,0 +1,60 @@
+﻿<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Test</title>
+    <meta name="robots" content="noindex, follow" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+<body>
+    <a asp-action="Create">Добавить модель</a>
+    <p>Список товаров</p>
+    <table class="table">
+        <tr>
+            <td>Модель</td>
+            <td>Информация</td>
+            <td>Цена</td>
+            <td>Описание</td>
+            <td>Характеристики</td>
+            <td>Бренд</td>
+        </tr>
+        @foreach (var knife in ViewBag.Knifes)
+        {
+            <tr>
+                <td>@knife.Knife_Name</td>
+                <td>@knife.Knife_Info</td>
+                <td>@knife.Knife_Cost</td>
+                <td>@knife.Knife_Description</td>
+                <td>@knife.Knife_Characteristic</td>
+                <td>@knife.Knife_Brand</td>
+            </tr>
+        }
+    </table>
+    <p>Список пользователей</p>
+    <table class="table">
+        <tr>
+            <td>Логин</td>
+            <td>Пароль</td>
+            <td>ФИО</td>
+            <td>День рождения</td>
+            <td>E-mail</td>
+            <td>Телефон</td>
+        </tr>
+        @foreach (var user in ViewBag.Users)
+        {
+            <tr>
+                <td>@user.User_Name</td>
+                <td>@user.User_Password</td>
+                <td>@user.User_FIO</td>
+                <td>@user.User_Birthday</td>
+                <td>@user.User_Email</td>
+                <td>@user.User_Telephone</td>
+            </tr>
+        }
+    </table>
+
+</body>
+</html>

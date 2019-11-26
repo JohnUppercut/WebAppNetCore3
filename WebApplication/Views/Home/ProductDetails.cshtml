@@ -1,0 +1,137 @@
+﻿<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Product Details</title>
+    <meta name="robots" content="noindex, follow" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+
+<body>
+    @model WebApplication.Models.Review
+
+    <div class="main-wrapper">
+        <!-- Page Banner Section Start -->
+        <div class="page-banner-section section">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+
+                        <div class="page-banner text-center">
+                            <h1>Product Details</h1>
+                            <ul class="page-breadcrumb">
+                                <li><a asp-area="" asp-controller="Home" asp-action="Shop">Shop</a></li>
+                                <li>Product Details</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div><!-- Page Banner Section End -->
+        <!-- Product Section Start -->
+        @foreach (var knife in ViewBag.Knifes)
+        {
+            <div class="product-section section pt-90 pb-90 pt-lg-80 pb-lg-80 pt-md-70 pb-md-70 pt-sm-60 pb-sm-60 pt-xs-50 pb-xs-50">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-12">
+
+                            <div class="product-details mb-50">
+                                <!-- Image -->
+                                <div class="product-image right-thumbnail mb-xs-20">
+                                    <!-- Image -->
+                                    <div class="product-slider single-product-slider-syn">
+                                        <div class="item"><img src="~/lib/images/product/product-1.jpg" alt=""></div>
+                                        <div class="item"><img src="~/lib/images/product/product-2.jpg" alt=""></div>
+                                        <div class="item"><img src="~/lib/images/product/product-3.jpg" alt=""></div>
+                                        <div class="item"><img src="~/lib/images/product/product-4.jpg" alt=""></div>
+                                        <div class="item"><img src="~/lib/images/product/product-5.jpg" alt=""></div>
+                                    </div>
+                                    <div class="product-slider single-product-thumb-slider-syn" data-vertical="true">
+                                        <div class="item"><img src="~/lib/images/product/product-1.jpg" alt=""></div>
+                                        <div class="item"><img src="~/lib/images/product/product-2.jpg" alt=""></div>
+                                        <div class="item"><img src="~/lib/images/product/product-3.jpg" alt=""></div>
+                                        <div class="item"><img src="~/lib/images/product/product-4.jpg" alt=""></div>
+                                        <div class="item"><img src="~/lib/images/product/product-5.jpg" alt=""></div>
+                                    </div>
+                                </div>
+                                <!-- Content -->
+                                <div class="product-content">
+                                    <div class="product-content-inner">
+                                        <div class="head">
+                                            <!-- Title-->
+                                            <div class="top">
+                                                <h4 class="title">@knife.Knife_Name</h4>
+                                            </div>
+                                            <!-- Price & Ratting -->
+                                            <div class="bottom">
+                                                <span class="price">@knife.Knife_Cost₽</span>
+                                            </div>
+                                        </div>
+                                        <div class="body">
+                                            <p>@knife.Knife_Info</p>
+                                            <!-- Product Action -->
+                                            <div class="product-action">
+                                                <a href="#" class="buy">Buy Now</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <ul class="product-details-tab-list nav">
+                                <li><a class="active" data-toggle="tab" href="#description">Description</a></li>
+                                <li><a data-toggle="tab" href="#specification">Specification</a></li>
+                                <li><a data-toggle="tab" href="#reviews">Reviews(15)</a></li>
+                            </ul>
+                            <div class="product-details-tab-content tab-content">
+                                <div class="tab-pane active" id="description">
+                                    <p>@knife.Knife_Description</p>
+                                </div>
+                                <div class="tab-pane" id="specification">
+                                    <ul class="specification">
+                                        <li>@knife.Knife_Characteristic</li>
+                                    </ul>
+                                </div>
+
+                                <div class="tab-pane" id="reviews">
+                                    @foreach (var review in ViewBag.Reviews)
+                                    {
+                                        <div class="review-list">
+                                            <div class="review">
+                                                <h4 class="name">@review.FK_User_ID<span>@review.Review_Date</span></h4>
+                                                <div class="desc">
+                                                    <p>@review.Review_Content</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+
+                                        <div class="review-form">
+                                            <h3>Give your review:</h3>
+                                            <form asp-action="ProductDetails" asp-controller="home">
+                                                <div class="row row-10">
+                                                    <div class="col-12 mb-20 form-group"><textarea type="text" asp-for="Review_Content" class="form-control" placeholder="Review"></textarea></div>
+                                                    <div class="col-12 form-group"><input type="submit" value="Submit"></div>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div><!-- Product Section End -->
+        }
+    </div>
+
+</body>
+
+</html>

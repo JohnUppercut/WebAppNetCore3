@@ -1,0 +1,197 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS
+    ============================================ -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/lib/bootstrap/bootstrap.min.css">
+
+    <!-- Icon Font CSS -->
+    <link rel="stylesheet" href="~/lib/bootstrap/font-awesome.min.css">
+
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="~/lib/bootstrap/plugins.css">
+
+    <!-- Helper CSS -->
+    <link rel="stylesheet" href="~/lib/bootstrap/helper.css">
+
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="~/lib/bootstrap/style.css">
+
+    <!-- Modernizer JS -->
+    <script src="~/lib/js/vendor/modernizr-2.8.3.min.js"></script>
+
+
+</head>
+<body>
+    <!-- Header Section Start -->
+    <div class="header-section section bg-theme">
+        <div class="container">
+            <div class="row">
+
+                <!-- Header Logo -->
+                <div class="col">
+                    <div class="header-logo">
+                        <a asp-area="" asp-controller="Home" asp-action="Index">
+                            <img src="~/lib/images/knifeico.ico" alt="">
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Main Menu -->
+                <div class="col d-none d-lg-block">
+                    <nav class="main-menu">
+                        <ul>
+                            <li><a asp-area="" asp-controller="Home" asp-action="Index">HOME</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="About">ABOUT</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="Shop">SHOP</a></li>
+                            <li><a href="#">CONTACT</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="LoginRegister">PROFILE</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="Test">TEST</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Header Action -->
+                <div class="col">
+                    <div class="header-action">
+                        <!-- Cart -->
+                        <a href="#" class="header-cart-toggle"><span class="icon">cart</span></a>
+                    </div>
+                </div>
+
+                <div class="col-12 d-block d-lg-none">
+                    <div class="mobile-menu"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div>
+        <partial name="_CookieConsentPartial" />
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    @RenderSection("Scripts", required: false)
+
+    <!-- Service Section Start -->
+    <div class="service-section section pl-15 pr-15 pl-lg-30 pr-lg-30 pl-md-30 pr-md-30">
+        <div class="service-container">
+            <div class="row ml-0 mr-0">
+
+                <div class="service col-xl-3 col-md-6 col-12">
+                    <div class="icon"></div>
+                    <div class="content">
+                        <h3>Free home delivery</h3>
+                        <p>Free shipping for any order</p>
+                    </div>
+                </div>
+                <div class="service col-xl-3 col-md-6 col-12">
+                    <div class="icon"></div>
+                    <div class="content">
+                        <h3>Quality Products</h3>
+                        <p>We ensure the product quality that is our main goal</p>
+                    </div>
+                </div>
+                <div class="service col-xl-3 col-md-6 col-12">
+                    <div class="icon"></div>
+                    <div class="content">
+                        <h3>3 Days Return</h3>
+                        <p>Return product within 3 days for any product you buy</p>
+                    </div>
+                </div>
+                <div class="service col-xl-3 col-md-6 col-12">
+                    <div class="icon"></div>
+                    <div class="content">
+                        <h3>Online Support</h3>
+                        <p>For any questions please contact us on social networks</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service Section End -->
+    <!-- Footer Top Section Start -->
+    <div class="footer-top-section section bg-dark">
+        <div class="container">
+            <div class="footer-widget-wrap row">
+
+                <div class="col mb-40">
+                    <div class="footer-widget">
+                        <p>We provide the best knives over the world. We are the best knife shop in the world. You can also buy our products at</p>
+                        <p>Russia, Stavropol, Lenina street 447</p>
+                        <p><a href="#">+7 962 0285827</a></p>
+                    </div>
+                </div>
+
+                <div class="col mb-40">
+                    <div class="footer-widget">
+                        <h3 class="title">Quick Link</h3>
+                        <ul>
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Shop</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">My Account</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col mb-40">
+                    <div class="footer-widget">
+                        <h3 class="title">Information</h3>
+                        <ul>
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Order Tracking</a></li>
+                            <li><a href="#">Payment System</a></li>
+                            <li><a href="#">Return Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col mb-40">
+                    <div class="footer-widget">
+                        <h3 class="title">Follow us</h3>
+                        <ul>
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">Instagram</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div><!-- Footer Top Section End -->
+    <!-- Footer Bottom Section Start -->
+    <div class="footer-bottom-section section">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <div class="copyright col-lg-6 col-12">
+                    <p>Copyright &copy; <a href="#">KnifeShop</a>, All Rights Reserved</p>
+                </div>
+
+                <div class="payment-method col-lg-6 col-12">
+                    <img src="~/lib/images/payment-method.png" alt="">
+                </div>
+
+            </div>
+        </div>
+    </div><!-- Footer Bottom Section End -->
+    <!-- JS
+    ============================================ -->
+    <!-- jQuery JS -->
+    <script src="~/lib/js/vendor/jquery-1.12.4.min.js"></script>
+    <!-- Popper JS -->
+    <script src="~/lib/js/popper.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="~/lib/js/bootstrap.min.js"></script>
+    <!-- Plugins JS -->
+    <script src="~/lib/js/plugins.js"></script>
+    <!-- Main JS -->
+    <script src="~/lib/js/main.js"></script>
+</body>
+</html>
